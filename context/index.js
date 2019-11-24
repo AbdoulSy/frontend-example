@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react"
 import ReactDOM from 'react-dom'
 
 export const apiCall = async (setSeconds) => {
-  const response = await fetch('https://example.local:8080/api');
+  const response = await fetch('https://localhost:3001/api');
   const myJson = await response.json();
 
   console.log(JSON.stringify(myJson));

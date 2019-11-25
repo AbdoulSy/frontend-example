@@ -9,11 +9,11 @@ export const Timer = ({ fetchUtil }) => {
   const remoteRequestFn = fetchUtil || apiCall;
 
   useEffect(() => {
-    remoteRequestFn(fetch)(setSeconds);
+    remoteRequestFn(setSeconds);
   }, [requests]);
 
   useEffect(() => {
-    intervalCall(setTimeout)(requests, setRequests);
+    intervalCall(requests, setRequests);
   });
 
   return <div data-testid="timer-title">

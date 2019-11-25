@@ -4,8 +4,8 @@
   "description": "Frontend examples in various languages",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel src/index.html",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,43 @@
   "devDependencies": {
     "@babel/cli": "^7.7.4",
     "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4"
+    "@babel/preset-env": "^7.7.4",
+    "@testing-library/dom": "^6.10.1",
+    "@testing-library/react": "^9.3.2",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "jest-css-modules-transform": "^3.1.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleDirectories": [
+      "src",
+      "node_modules"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(jpg|gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest",
+      ".+\\.(css|styl|less|sass|scss)$": "<rootDir>/node_modules/jest-css-modules-transform"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "setupFiles": [
+      "<rootDir>/src/setup.js"
+    ],
+    "moduleFileExtensions": [
+      "css",
+      "scss",
+      "js",
+      "json",
+      "jsx"
+    ],
+    "testRegex": "^.+\\.spec\\.(js|jsx)",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!test-component).+\\.js$"
+    ]
   }
 }

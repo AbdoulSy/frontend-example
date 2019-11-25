@@ -1,0 +1,6 @@
+require("@babel/polyfill");
+import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
+import Timer from "./components/Timer";
+
+ReactDOM.render(<Timer />, document.getElementById("root"));

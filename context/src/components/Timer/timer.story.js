@@ -1,6 +1,5 @@
 import React from 'react';
-import { linkTo } from '@storybook/addon-links';
-import Timer from "./";
+import Timer from ".";
 
 export default {
   title: 'Timer',
